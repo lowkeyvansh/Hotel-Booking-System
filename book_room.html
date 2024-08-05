@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Room</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Book Room</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main>
+        <form action="{{ url_for('book_room') }}" method="POST">
+            {{ form.hidden_tag() }}
+            <label for="customer_name">Customer Name:</label>
+            {{ form.customer_name }}
+            <label for="room_id">Room ID:</label>
+            {{ form.room_id }}
+            <label for="check_in_date">Check-in Date:</label>
+            {{ form.check_in_date }}
+            <label for="check_out_date">Check-out Date:</label>
+            {{ form.check_out_date }}
+            {{ form.submit }}
+        </form>
+    </main>
+</body>
+</html>
